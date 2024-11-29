@@ -1,5 +1,5 @@
 <template>
-  <el-form :label-width="130">
+  <el-form :label-width="labelWidth || 130">
     <el-row>
       <template v-for="form in formItems" :key="form.key">
         <el-col :span="form.col">
@@ -53,6 +53,7 @@ const { formItems, defaultFormValue, view } = defineProps([
   "defaultFormValue",
   "formItems",
   "view",
+  "labelWidth",
 ]);
 function toOpt(opt: any) {
   if (opt.componentOptions) {
